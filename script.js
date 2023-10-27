@@ -11,4 +11,24 @@ function getComputerChoice() {
     }
 }
 
-console.log(getComputerChoice());
+function playRound(playerSelection, computerSelection) {
+    if (!playerSelection.localeCompare('Rock', undefined, {sensitivity: 'accent'}) && (computerSelection === 'Scissors')) {
+        return 'You win! Rock beats Scissors';
+    } else if (!playerSelection.localeCompare('Scissors', undefined, {sensitivity: 'accent'}) && computerSelection === 'Paper') {
+        return 'You win! Scissors beats Paper';
+    } else if (!playerSelection.localeCompare('Paper', undefined, {sensitivity: 'accent'}) && computerSelection === 'Rock') {
+        return 'You win! Paper beats Rock';
+    } else if (!playerSelection.localeCompare('Scissors', undefined, {sensitivity: 'accent'}) && computerSelection === 'Rock') {
+        return 'You lost! Rock beats Scissors';
+    } else if (!playerSelection.localeCompare('Paper', undefined, {sensitivity: 'accent'}) && computerSelection === 'Scissors') {
+        return 'You lost! Scissors beats Paper';
+    } else if (!playerSelection.localeCompare('Rock', undefined, {sensitivity: 'accent'}) && (computerSelection === 'Paper')) {
+        return 'You lost! Paper beats Rock';
+    } else if (!playerSelection.localeCompare(computerSelection, undefined, {sensitivity: 'accent'})) {
+        return 'Draw!';
+    }
+}
+
+const playerSelection = 'rock';
+const computerSelection = getComputerChoice();
+console.log(playRound(playerSelection, computerSelection));
