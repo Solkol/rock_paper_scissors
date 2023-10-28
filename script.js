@@ -63,6 +63,6 @@ function game() {
             computerScore++;
         }
     }
-}
 
-console.log(playRound(playerSelection, computerSelection));
+    giveWinner(playerScore, computerScore);
+}
