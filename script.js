@@ -50,7 +50,7 @@ function game() {
     let computerSelection;
     let roundResult;
     
-    while (playerScore !== 5 || computerScore !== 5) {
+    while (playerScore !== 5 && computerScore !== 5) {
         playerSelection = prompt('Enter a choice: Rock, Paper or Scissors?');
         computerSelection = getComputerChoice();
 
@@ -61,6 +61,8 @@ function game() {
         } else if (roundResult === 0) {
             computerScore++;
         }
+
+        console.log(`Current result is: Player ${playerScore} - Computer ${computerScore}`);
     }
 
     giveWinner(playerScore, computerScore);
