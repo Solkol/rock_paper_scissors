@@ -48,6 +48,12 @@ function game() {
         computerSelection = getComputerChoice();
 
         roundResult = playRound(playerSelection, computerSelection);
+
+        if (roundResult === 1) {
+            playerScore++;
+        } else if (roundResult === 0) {
+            computerScore++;
+        }
     }
 }
 
