@@ -36,6 +36,14 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+function giveWinner(playerWins, computerWins) {
+    if (playerWins > computerWins) {
+        console.log(`You win the game! Result: Player ${playerWins} - Computer ${computerWins}`);
+    } else {
+        console.log(`You lost the game! Result: Player ${playerWins} - Computer ${computerWins}`);
+    }
+}
+
 function game() {
     let playerScore = 0;
     let computerScore = 0;
