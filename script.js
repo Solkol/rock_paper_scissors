@@ -13,19 +13,26 @@ function getComputerChoice() {
 
 function playRound(playerSelection, computerSelection) {
     if (!playerSelection.localeCompare('Rock', undefined, {sensitivity: 'accent'}) && (computerSelection === 'Scissors')) {
-        return 'You win! Rock beats Scissors';
+        console.log('You win! Rock beats Scissors');
+        return 1;
     } else if (!playerSelection.localeCompare('Scissors', undefined, {sensitivity: 'accent'}) && computerSelection === 'Paper') {
-        return 'You win! Scissors beats Paper';
+        console.log('You win! Scissors beats Paper');
+        return 1;
     } else if (!playerSelection.localeCompare('Paper', undefined, {sensitivity: 'accent'}) && computerSelection === 'Rock') {
-        return 'You win! Paper beats Rock';
+        console.log('You win! Paper beats Rock');
+        return 1;
     } else if (!playerSelection.localeCompare('Scissors', undefined, {sensitivity: 'accent'}) && computerSelection === 'Rock') {
-        return 'You lost! Rock beats Scissors';
+        console.log('You lost! Rock beats Scissors');
+        return 0;
     } else if (!playerSelection.localeCompare('Paper', undefined, {sensitivity: 'accent'}) && computerSelection === 'Scissors') {
-        return 'You lost! Scissors beats Paper';
+        console.log('You lost! Scissors beats Paper');
+        return 0;
     } else if (!playerSelection.localeCompare('Rock', undefined, {sensitivity: 'accent'}) && (computerSelection === 'Paper')) {
-        return 'You lost! Paper beats Rock';
+        console.log('You lost! Paper beats Rock');
+        return 0;
     } else if (!playerSelection.localeCompare(computerSelection, undefined, {sensitivity: 'accent'})) {
-        return 'Draw!';
+        console.log('Draw!');
+        return -1;
     }
 }
 
@@ -34,10 +41,13 @@ function game() {
     let computerScore = 0;
     let playerSelection;
     let computerSelection;
+    let roundResult;
     
     while (playerScore !== 5 || computerScore !== 5) {
         playerSelection = prompt('Enter a choice: Rock, Paper or Scissors?');
         computerSelection = getComputerChoice();
+
+        roundResult = playRound(playerSelection, computerSelection);
     }
 }
 
