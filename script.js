@@ -66,3 +66,5 @@ function game() {
 
     giveWinner(playerScore, computerScore);
 }
+
+game();
