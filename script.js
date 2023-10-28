@@ -29,6 +29,16 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-const playerSelection = 'rock';
-const computerSelection = getComputerChoice();
+function game() {
+    let playerScore = 0;
+    let computerScore = 0;
+    let playerSelection;
+    let computerSelection;
+    
+    while (playerScore !== 5 || computerScore !== 5) {
+        playerSelection = prompt('Enter a choice: Rock, Paper or Scissors?');
+        computerSelection = getComputerChoice();
+    }
+}
+
 console.log(playRound(playerSelection, computerSelection));
