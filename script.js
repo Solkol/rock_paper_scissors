@@ -12,25 +12,25 @@ function getComputerChoice() {
 
 function playRound(playerSelection, computerSelection) {
     if (!playerSelection.localeCompare('Rock', undefined, {sensitivity: 'accent'}) && (computerSelection === 'Scissors')) {
-        console.log('You win! Rock beats Scissors');
+        infoDiv.textContent = 'You win! Rock beats Scissors!';
         return 1;
     } else if (!playerSelection.localeCompare('Scissors', undefined, {sensitivity: 'accent'}) && computerSelection === 'Paper') {
-        console.log('You win! Scissors beats Paper');
+        infoDiv.textContent = 'You win! Scissors beats Paper!';
         return 1;
     } else if (!playerSelection.localeCompare('Paper', undefined, {sensitivity: 'accent'}) && computerSelection === 'Rock') {
-        console.log('You win! Paper beats Rock');
+        infoDiv.textContent = 'You win! Paper beats Rock!';
         return 1;
     } else if (!playerSelection.localeCompare('Scissors', undefined, {sensitivity: 'accent'}) && computerSelection === 'Rock') {
-        console.log('You lost! Rock beats Scissors');
+        infoDiv.textContent = 'You lost! Rock beats Scissors!';
         return 0;
     } else if (!playerSelection.localeCompare('Paper', undefined, {sensitivity: 'accent'}) && computerSelection === 'Scissors') {
-        console.log('You lost! Scissors beats Paper');
+        infoDiv.textContent = 'You lost! Scissors beats Paper!';
         return 0;
     } else if (!playerSelection.localeCompare('Rock', undefined, {sensitivity: 'accent'}) && (computerSelection === 'Paper')) {
-        console.log('You lost! Paper beats Rock');
+        infoDiv.textContent = 'You lost! Paper beats Rock!';
         return 0;
     } else if (!playerSelection.localeCompare(computerSelection, undefined, {sensitivity: 'accent'})) {
-        console.log('Draw!');
+        infoDiv.textContent = 'Draw!';
         return -1;
     }
 }
@@ -49,6 +49,7 @@ function game() {
     let roundResult;
 
     const infoDiv = document.querySelector('#infoDiv');
+    infoDiv.textContent = 'Make your choice! Press a button to start the game!';
     const btnDiv = document.querySelector('#buttons');
 
     btnDiv.addEventListener('click', (e) => {
@@ -62,7 +63,7 @@ function game() {
             computerScore++;
         }
 
-        console.log(`Current result is: Player ${playerScore} - Computer ${computerScore}`);
+        infoDiv.textContent = infoDiv.textContent + '\n' + `Current result is: Player ${playerScore} - Computer ${computerScore}`;
 
         }
     );
