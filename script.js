@@ -63,13 +63,16 @@ function game() {
             computerScore++;
         }
 
-        infoDiv.textContent = infoDiv.textContent + '\n' + `Current result is: Player ${playerScore} - Computer ${computerScore}`;
-
+        if (playerScore === 5 || computerScore === 5) {
+            giveWinner(playerScore, computerScore);
+        } else {
+            infoDiv.textContent = infoDiv.textContent + '\n' + `Current result is: Player ${playerScore} - Computer ${computerScore}`;
         }
+
+    }
     );
 
  
-//        giveWinner(playerScore, computerScore);
 
 }
 
