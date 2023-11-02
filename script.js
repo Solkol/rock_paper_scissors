@@ -46,15 +46,15 @@ function giveWinner(playerWins, computerWins) {
 function game() {
     let playerScore = 0;
     let computerScore = 0;
-    let playerSelection;
-    let computerSelection;
     let roundResult;
-    
-    while (playerScore !== 5 && computerScore !== 5) {
-        playerSelection = prompt('Enter a choice: Rock, Paper or Scissors?');
-        computerSelection = getComputerChoice();
 
-        roundResult = playRound(playerSelection, computerSelection);
+    const infoDiv = document.querySelector('#infoDiv');
+    const btnDiv = document.querySelector('#buttons');
+
+    btnDiv.addEventListener('click', (e) => {
+        let target = e.target;
+
+	    roundResult = playRound(target.id, getComputerChoice());
 
         if (roundResult === 1) {
             playerScore++;
@@ -63,9 +63,13 @@ function game() {
         }
 
         console.log(`Current result is: Player ${playerScore} - Computer ${computerScore}`);
-    }
 
-    giveWinner(playerScore, computerScore);
+        }
+    );
+
+ 
+//        giveWinner(playerScore, computerScore);
+
 }
 
 game();
