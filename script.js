@@ -37,9 +37,9 @@ function playRound(playerSelection, computerSelection) {
 
 function giveWinner(playerWins, computerWins) {
     if (playerWins > computerWins) {
-        console.log(`You win the game! Result: Player ${playerWins} - Computer ${computerWins}`);
+        infoDiv.textContent = `You win the game! Result: Player ${playerWins} - Computer ${computerWins}!`;
     } else {
-        console.log(`You lost the game! Result: Player ${playerWins} - Computer ${computerWins}`);
+        infoDiv.textContent = `You lost the game! Result: Player ${playerWins} - Computer ${computerWins}!`;
     }
 }
 
@@ -65,6 +65,7 @@ function game() {
 
         if (playerScore === 5 || computerScore === 5) {
             giveWinner(playerScore, computerScore);
+            infoDiv.textContent = infoDiv.textContent + '\n' + 'To play again, press a button to make a choice.'
         } else {
             infoDiv.textContent = infoDiv.textContent + '\n' + `Current result is: Player ${playerScore} - Computer ${computerScore}`;
         }
