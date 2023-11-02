@@ -66,15 +66,14 @@ function game() {
         if (playerScore === 5 || computerScore === 5) {
             giveWinner(playerScore, computerScore);
             infoDiv.textContent = infoDiv.textContent + '\n' + 'To play again, press a button to make a choice.'
+            playerScore = 0;
+            computerScore = 0;
         } else {
             infoDiv.textContent = infoDiv.textContent + '\n' + `Current result is: Player ${playerScore} - Computer ${computerScore}`;
         }
 
     }
     );
-
- 
-
 }
 
 game();
